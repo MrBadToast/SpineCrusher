@@ -1,0 +1,8 @@
+Animations - 애니메이션, 애니메이터, 타임라인 파일
+GameObjects - 게임오브젝트, 프리팹 파일
+Graphics - 이미지, 쉐이더 파일
+Misc - 기타파일
+Scenes - 씬 파일
+Scripts - 스크립트 파일
+
+그 외의 파일을 어디 넣어야 할 지 모르시겠다면 물어봐주세요~
