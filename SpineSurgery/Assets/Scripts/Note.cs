@@ -16,6 +16,31 @@ public class Note : MonoBehaviour
         StartCoroutine(Cor_ShrinkRing());
     }
 
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            RaycastHit2D rayhit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
+            if(rayhit.collider.gameObject == this.gameObject)
+            {
+                
+            }
+            
+        }
+    }
+
+    private void CheckCorrect()
+    {
+        if (Ring.radius > TolleranceMin && Ring.radius < TolleranceMax)
+        {
+            StageManager.instance.OnNoteCorrect();
+        }
+        else
+        {
+            StageManager.instance.OnNoteMiss();
+        }
+    }
+
     IEnumerator Cor_ShrinkRing()
     {
         float tMinus = 0;
@@ -23,11 +48,11 @@ public class Note : MonoBehaviour
         while(Ring.radius >= 0.1f)
         {
             tMinus += Time.deltaTime;
-            Debug.Log((FullShrinkTime - tMinus) / FullShrinkTime);
             Ring.radius = Mathf.Lerp(FullRingSize, 0, 1 - (FullShrinkTime - tMinus)/FullShrinkTime);
             yield return new WaitForFixedUpdate();
         }
     }
 
+    
 
 }
