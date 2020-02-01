@@ -26,8 +26,6 @@ public class CAnim : MonoBehaviour
             yield return new WaitForSeconds(5.0f);
             int res1 = Random.Range(0, 3);
             int res2 = Random.Range(0, 3);
-            Debug.Log(res1);
-            Debug.Log(res2);
             Left.SetInteger("LArmSwitch", res1);
             Right.SetInteger("RArmSwitch", res2);
         }
