@@ -31,6 +31,10 @@ public class SpineManager : MonoBehaviour
     public void StopDance()
     { StopCoroutine("Cor_Dance"); }
 
+    public void MakeMessySpine()
+    // 척추를 구부러트리고 곧은 허리를 다시 굽게 만듭니다.
+    { StartCoroutine(Cor_MakeMessySpine()); }
+
     public void ScrambleSpine()
     // 척추를 랜덤하게 구부립니다.
     {
@@ -72,6 +76,18 @@ public class SpineManager : MonoBehaviour
             }
                 yield return null;
         }
+    }
+
+    private IEnumerator Cor_MakeMessySpine()
+    {
+        Intensity = 0f;
+        ScrambleSpine();
+        while(Intensity <= 0.99f)
+        {
+            Intensity = Mathf.Lerp(Intensity, 1f, 0.2f);
+            yield return new WaitForFixedUpdate();
+        }
+        Intensity = 1f;
     }
 
     //private IEnumerator Cor_RepairSpine(int spineIndex)

@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class SingleStage
+{
+    public int stageIndex;
+    public 
+
+}
+
 public class StageManager : MonoBehaviour
 {
     [HideInInspector]
@@ -19,7 +26,7 @@ public class StageManager : MonoBehaviour
 
     public void OnNoteCorrect()
     {
-        
+
     }
 
     public void OnNoteMiss()
@@ -31,6 +38,11 @@ public class StageManager : MonoBehaviour
     }
 
     public void GameOver()
+    {
+
+    }
+
+    public void NextStage()
     {
 
     }
