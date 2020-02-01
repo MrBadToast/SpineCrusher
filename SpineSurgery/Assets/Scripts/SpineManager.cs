@@ -16,6 +16,7 @@ public class SpineManager : MonoBehaviour
 
     public void FixedUpdate()
     {
+
     }
 
     public void Dance()
@@ -71,7 +72,7 @@ public class SpineManager : MonoBehaviour
 
     private IEnumerator Cor_RepairSpineTest()
     {
-        for(int i = 6; i >= 0; --i)
+        for(int i = Spines.Length - 1; i >= 0; --i)
         {
             yield return StartCoroutine(Cor_RepairSpine(i));
         }
